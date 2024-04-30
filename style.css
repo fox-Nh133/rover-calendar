@@ -22,6 +22,12 @@ nav.navbar {
     background-color: 7ed9ff;
 }
 @media (prefers-color-scheme: dark) {
+    .fc-list-day-text {
+        color: #ffffff;
+    }
+    .fc-list-day-side-text {
+        color: #ffffff;
+    }
     .fc-toolbar-title {
         color: #ffffff;
     }
@@ -29,6 +35,9 @@ nav.navbar {
         color: #ffffff;
     }
     .fc-daygrid-day-number {
+        color: #ffffff;
+    }
+    th {
         color: #ffffff;
     }
 }
