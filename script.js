@@ -22,11 +22,25 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     }
 
-    // init calendar
+    // init and sync calendar
     var calendarEl = document.getElementById('calendar');
     var calendar = new FullCalendar.Calendar(calendarEl, {
-      initialView: 'dayGridMonth'
+      locale: 'ja',
+      initialView: 'dayGridMonth',
+      events:'27368b164f2ff54d4b7f165793fba4d2ef0706b2de617768c8c030ad0500e14c@group.calendar.google.com',
+      googleCalendarApiKey: 'AIzaSyCsHXchDeAV3aW3NU6XC69K3bnzX69iJDs'
     });
-    calendar.render();
+    calendar.render() 
+
+    // init current date
+    var today = new Date();
+    var options = { month: 'long', day: 'numeric' };
+    var weekday = { weekday: 'long' };
+
+    var formattedDate = today.toLocaleDateString('ja-JP', options);
+    var formattedWeekday = today.toLocaleDateString('ja-JP', weekday);
+
+    document.getElementById('current-date').textContent = formattedDate;
+    document.getElementById('current-day').textContent = formattedWeekday;
 
   });
