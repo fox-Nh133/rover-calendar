@@ -28,7 +28,16 @@ document.addEventListener('DOMContentLoaded', () => {
     var weeklyCalendar = new FullCalendar.Calendar(weeklyCalendarEl, {
       locale: 'ja',
       initialView: 'listWeek',
-      events:'27368b164f2ff54d4b7f165793fba4d2ef0706b2de617768c8c030ad0500e14c@group.calendar.google.com',
+      events: [
+        {
+          googleCalendarId:'27368b164f2ff54d4b7f165793fba4d2ef0706b2de617768c8c030ad0500e14c@group.calendar.google.com'
+        },
+        {
+          title: 'All Day Event',
+          start: '2024-04-30',
+          end: '2024-04-30'
+        }
+      ],
       googleCalendarApiKey: 'AIzaSyCsHXchDeAV3aW3NU6XC69K3bnzX69iJDs',
     });
     weeklyCalendar.render()
