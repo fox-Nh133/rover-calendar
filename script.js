@@ -23,14 +23,25 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // init and sync calendar
-    var calendarEl = document.getElementById('calendar');
-    var calendar = new FullCalendar.Calendar(calendarEl, {
+    // weekly-calendar config
+    var weeklyCalendarEl = document.getElementById('weekly-calendar');
+    var weeklyCalendar = new FullCalendar.Calendar(weeklyCalendarEl, {
+      locale: 'ja',
+      initialView: 'listWeek',
+      events:'27368b164f2ff54d4b7f165793fba4d2ef0706b2de617768c8c030ad0500e14c@group.calendar.google.com',
+      googleCalendarApiKey: 'AIzaSyCsHXchDeAV3aW3NU6XC69K3bnzX69iJDs',
+    });
+    weeklyCalendar.render()
+
+    // main-calendar config
+    var mainCalendarEl = document.getElementById('main-calendar');
+    var mainCalendar = new FullCalendar.Calendar(mainCalendarEl, {
       locale: 'ja',
       initialView: 'dayGridMonth',
       events:'27368b164f2ff54d4b7f165793fba4d2ef0706b2de617768c8c030ad0500e14c@group.calendar.google.com',
       googleCalendarApiKey: 'AIzaSyCsHXchDeAV3aW3NU6XC69K3bnzX69iJDs'
     });
-    calendar.render() 
+    mainCalendar.render() 
 
     // init current date
     var today = new Date();

@@ -15,6 +15,9 @@ nav.navbar {
 }
 
 /* fullcalendar customaization */
+#weekly-calendar .fc-header-toolbar {
+    display: none;
+}
 @media (prefers-color-scheme: dark) {
     .fc-toolbar-title {
         color: #ffffff;
