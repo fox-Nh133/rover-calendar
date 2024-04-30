@@ -37,8 +37,10 @@ nav.navbar {
     .fc-daygrid-day-number {
         color: #ffffff;
     }
-    th {
-        color: #00000000;
-        background-color: #00000000;
+    #weekly-calendar th {
+        background-color: transparent !important;
+    }
+    #weekly-calendar td{
+        background-color: transparent !important;
     }
 }
