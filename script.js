@@ -52,41 +52,32 @@ document.addEventListener('DOMContentLoaded', () => {
     //// API request
     const apiKey = 'AIzaSyCsHXchDeAV3aW3NU6XC69K3bnzX69iJDs';
     const calendarId = '27368b164f2ff54d4b7f165793fba4d2ef0706b2de617768c8c030ad0500e14c@group.calendar.google.com'
-    const url = 'https://www.googleapis.com/calendar/v3/calendars/${calendarId}/events?key=${apiKey}&timeMin=${isoStart}&timeMax=${isoEnd}&singleEvents=true&orderBy=startTime';
+    const url = `https://www.googleapis.com/calendar/v3/calendars/${calendarId}/events?key=${apiKey}&timeMin=${isoStart}&timeMax=${isoEnd}&singleEvents=true&orderBy=startTime`;
 
     fetch(url)
     .then(response => response.json())
     .then(data => {
-        renderCalendar(data.items);
+        renderEvents(data.items);
     })
     .catch(error => console.error('Error fetching data: ', error));
 
     //// render calendar
-    function renderCalendar(events) {
-      const weeklyCalendar = document.getElementById('weekly-calendar');
-      const table = document.createElement('table');
-      table.className = 'event-table';
+    function renderEvents(events) {
+      const listContainer = document.getElementById('eventList');
+      listContainer.innerHTML = '';  // 既存のリストをクリア
   
-      const thead = table.createTHead();
-      const headerRow = thead.insertRow();
-      const days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
-      
-      days.forEach(day => {
-          const th = document.createElement('th');
-          th.textContent = day;
-          headerRow.appendChild(th);
-      });
-  
-      const tbody = table.createTBody();
-      const row = tbody.insertRow();
-      
       events.forEach(event => {
-          const cell = row.insertCell();
-          cell.textContent = `${event.summary}: ${new Date(event.start.dateTime).toLocaleTimeString()} - ${new Date(event.end.dateTime).toLocaleTimeString()}`;
+          const listItem = document.createElement('div');
+          const eventDate = new Date(event.start.date).toLocaleDateString('ja-JP');
+          const eventTime = `${new Date(event.start.date).toLocaleTimeString('ja-JP')} - ${new Date(event.end.date).toLocaleTimeString('ja-JP')}`;
+          listItem.innerHTML = {
+              title: event.summary,
+              date: eventDate,
+              time: eventTime
+          };
+          listContainer.appendChild(listItem);
       });
-  
-      weeklyCalendar.appendChild(table);
     }
-  
+ 
 
   });
