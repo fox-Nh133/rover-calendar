@@ -34,8 +34,8 @@ document.addEventListener('DOMContentLoaded', () => {
         },
         {
           title: 'All Day Event',
-          start: '2024-04-30',
-          end: '2024-04-30'
+          start: '2024-05-01',
+          end: '2024-05-01'
         }
       ],
       googleCalendarApiKey: 'AIzaSyCsHXchDeAV3aW3NU6XC69K3bnzX69iJDs',
