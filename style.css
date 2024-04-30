@@ -38,6 +38,7 @@ nav.navbar {
         color: #ffffff;
     }
     th {
-        color: #ffffff;
+        color: #00000000;
+        background-color: #00000000;
     }
 }
