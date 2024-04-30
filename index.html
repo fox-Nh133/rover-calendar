@@ -8,10 +8,15 @@
   <title>Rover Calendar</title>
     <!-- Bulma Version 1-->
     <link rel="stylesheet" href="https://unpkg.com/bulma@1.0.0/css/bulma.min.css" />
+    <!-- Font Awesome -->
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
     integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-  <!-- <link rel="stylesheet" href="../css/bulma-divider.min.css"> -->
-  <link rel="stylesheet" href="style.css">
+    <!-- custon css -->
+    <link rel="stylesheet" href="style.css">
+    <!-- FullCalendar cdn -->
+    <script src="
+https://cdn.jsdelivr.net/npm/fullcalendar@6.1.11/index.global.min.js
+"></script>
 
 </head>
 
@@ -21,7 +26,8 @@
     <div class="container">
       <div class="navbar-brand">
         <a class="navbar-item" href="../">
-          <img src="/images/logo_9.png" alt="Logo">
+            <h1 class="title">Rover Calendar</h1>
+          <!-- <img src="/images/logo_9.png" alt="Logo"> -->
         </a>
         <span class="navbar-burger burger" data-target="navbarMenu">
           <span></span>
@@ -54,10 +60,41 @@
   </nav>
   <!-- END NAV -->
 
+  <!-- Main view -->
+  <section class="section">
+    <div class="container">
+        <div class="columns">
+            <!-- Today view  -->
+            <div class="column is-one-third">
+                <div class="box">
+                    <div class="has-text-centered">
+                        <h1 class="title">Apr. 28</h1>
+                        <p class="subtitle">Sunday</p>
+                    </div>
+                    <hr>
+                    <div class="block">
+                        There are no events today.
+                    </div>
+                    <hr>
+                    <div class="block">
+                        <a href="#" class="button is-info is-fullwidth">Add Event</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Calendar view -->
+            <div class="column">
+                <div id="caledar"></div>
+            </div>
+        </div>
+    </div>
+  </section>
+
   <!-- Image -->
   <section class="hero ">
     <div class="hero-body">
       <div class="container">
+
+
 
         <section class="section">
           <div class="columns">
