@@ -23,14 +23,31 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // init monthly calendar (fullcalendar integration)
-    var mainCalendarEl = document.getElementById('main-calendar');
-    var mainCalendar = new FullCalendar.Calendar(mainCalendarEl, {
-      locale: 'ja',
-      initialView: 'dayGridMonth',
-      events:'27368b164f2ff54d4b7f165793fba4d2ef0706b2de617768c8c030ad0500e14c@group.calendar.google.com',
-      googleCalendarApiKey: 'AIzaSyCsHXchDeAV3aW3NU6XC69K3bnzX69iJDs'
-    });
-    mainCalendar.render() 
+    //// parse ics url
+    const calendarIcsUrl = 'https://calendar.google.com/calendar/ical/27368b164f2ff54d4b7f165793fba4d2ef0706b2de617768c8c030ad0500e14c%40group.calendar.google.com/public/basic.ics'
+    fetch(calendarIcsUrl)
+      .then(response => response.text())
+      .then(data => {
+        const jcalData = ICAL.parse(data);
+        const comp = new ICAL.Component(jcalData);
+        const mainEvents = comp.getAllSubcomponents('vevent').map(vevent => {
+            const event = new ICAL.Event(vevent);
+            return {
+                title: event.summary,
+                start: event.startDate.toJSDate(),
+                end: event.endDate.toJSDate()
+            };
+        });
+
+        //// render calendar 
+        var mainCalendarEl = document.getElementById('calendar');
+        var mainCalendar = new FullCalendar.Calendar(mainCalendarEl, {
+            initialView: 'dayGridMonth',
+            events: mainEvents
+        });
+        mainCalendar.render();
+      })
+      .catch(error => console.error('Error fetching data: ', error));
 
     // init current date
     var today = new Date();
@@ -45,39 +62,39 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('current-date').textContent = formattedDate;
     document.getElementById('current-day').textContent = formattedWeekday;
 
-    // init weekly calendar
-    const isoStart = today.toISOString();
-    const isoEnd = endDate.toISOString();
+    // // init weekly calendar
+    // const isoStart = today.toISOString();
+    // const isoEnd = endDate.toISOString();
 
-    //// API request
-    const apiKey = 'AIzaSyCsHXchDeAV3aW3NU6XC69K3bnzX69iJDs';
-    const calendarId = '27368b164f2ff54d4b7f165793fba4d2ef0706b2de617768c8c030ad0500e14c@group.calendar.google.com'
-    const url = `https://www.googleapis.com/calendar/v3/calendars/${calendarId}/events?key=${apiKey}&timeMin=${isoStart}&timeMax=${isoEnd}&singleEvents=true&orderBy=startTime`;
+    // //// API request
+    // const apiKey = 'AIzaSyCsHXchDeAV3aW3NU6XC69K3bnzX69iJDs';
+    // const calendarId = '27368b164f2ff54d4b7f165793fba4d2ef0706b2de617768c8c030ad0500e14c@group.calendar.google.com'
+    // const url = `https://www.googleapis.com/calendar/v3/calendars/${calendarId}/events?key=${apiKey}&timeMin=${isoStart}&timeMax=${isoEnd}&singleEvents=true&orderBy=startTime`;
 
-    fetch(url)
-    .then(response => response.json())
-    .then(data => {
-        renderEvents(data.items);
-    })
-    .catch(error => console.error('Error fetching data: ', error));
+    // fetch(url)
+    // .then(response => response.json())
+    // .then(data => {
+    //     renderEvents(data.items);
+    // })
+    // .catch(error => console.error('Error fetching data: ', error));
 
-    //// render calendar
-    function renderEvents(events) {
-      const listContainer = document.getElementById('eventList');
-      listContainer.innerHTML = '';  // 既存のリストをクリア
+    // //// render calendar
+    // function renderEvents(events) {
+    //   const listContainer = document.getElementById('eventList');
+    //   listContainer.innerHTML = '';  // 既存のリストをクリア
   
-      events.forEach(event => {
-          const listItem = document.createElement('div');
-          const eventDate = new Date(event.start.date).toLocaleDateString('ja-JP');
-          const eventTime = `${new Date(event.start.date).toLocaleTimeString('ja-JP')} - ${new Date(event.end.date).toLocaleTimeString('ja-JP')}`;
-          listItem.innerHTML = {
-              title: event.summary,
-              date: eventDate,
-              time: eventTime
-          };
-          listContainer.appendChild(listItem);
-      });
-    }
+    //   events.forEach(event => {
+    //       const listItem = document.createElement('div');
+    //       const eventDate = new Date(event.start.date).toLocaleDateString('ja-JP');
+    //       const eventTime = `${new Date(event.start.date).toLocaleTimeString('ja-JP')} - ${new Date(event.end.date).toLocaleTimeString('ja-JP')}`;
+    //       listItem.innerHTML = {
+    //           title: event.summary,
+    //           date: eventDate,
+    //           time: eventTime
+    //       };
+    //       listContainer.appendChild(listItem);
+    //   });
+    // }
  
 
   });
