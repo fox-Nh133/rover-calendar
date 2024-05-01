@@ -1,0 +1,48 @@
+[
+  {
+    "type": "VEVENT",
+    "params": [],
+    "start": "2024-04-29T15:00:00.000Z",
+    "end": "2024-04-30T15:00:00.000Z",
+    "dtstamp": "2024-05-01T02:22:29.000Z",
+    "uid": "0lgh0vmbubnvuolo101j7csdmj@google.com",
+    "created": "2024-04-30T11:56:30.000Z",
+    "lastmodified": "2024-04-30T11:56:30.000Z",
+    "sequence": "0",
+    "status": "CONFIRMED",
+    "summary": "テストイベント",
+    "transparency": "TRANSPARENT"
+  },
+  {
+    "type": "VEVENT",
+    "params": [],
+    "start": "2024-05-02T01:00:00.000Z",
+    "end": "2024-05-02T01:30:00.000Z",
+    "dtstamp": "2024-05-01T02:22:29.000Z",
+    "uid": "6bm60ussk7kbq75n05kt1dsa57@google.com",
+    "created": "2024-05-01T02:20:07.000Z",
+    "description": "content message",
+    "lastmodified": "2024-05-01T02:20:07.000Z",
+    "location": "place",
+    "sequence": "0",
+    "status": "CONFIRMED",
+    "summary": "テストイベント2",
+    "transparency": "OPAQUE"
+  },
+  {
+    "type": "VEVENT",
+    "params": [],
+    "start": "2024-05-03T01:00:00.000Z",
+    "end": "2024-05-03T01:30:00.000Z",
+    "dtstamp": "2024-05-01T02:22:29.000Z",
+    "uid": "4vd990pud419uinaoaf59q1t3j@google.com",
+    "created": "2024-05-01T02:22:24.000Z",
+    "description": "content message<br><ul><li>item 1</li><li>item 2<ul><li>child item 1</li></ul></li></ul><a href=\"https://www.google.com\">hyperlink</a>",
+    "lastmodified": "2024-05-01T02:22:24.000Z",
+    "location": "プラス・ディタリー, フランス 〒75013 パリ プラス・ディタリー",
+    "sequence": "0",
+    "status": "CONFIRMED",
+    "summary": "テストイベント 3",
+    "transparency": "OPAQUE"
+  }
+]
