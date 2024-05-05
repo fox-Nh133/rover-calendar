@@ -61,16 +61,16 @@
   {
     "type": "VEVENT",
     "params": [],
-    "start": "2024-05-06T19:30:00.000Z",
-    "end": "2024-05-06T20:30:00.000Z",
-    "uid": "62qh7hq2rktj731ds0e8mcg0i2@google.com",
-    "created": "2024-05-05T19:22:58.000Z",
-    "description": "説明",
-    "lastmodified": "2024-05-05T19:23:08.000Z",
-    "location": "場所",
+    "start": "2024-05-25T00:00:00.000Z",
+    "end": "2024-05-27T00:00:00.000Z",
+    "uid": "1k1l7l1saqdovru87onm1u2bbg@google.com",
+    "created": "2024-05-05T22:46:32.000Z",
+    "description": "参加費:  3,000円<br>交歓会参加費: 10,000円<br>参加対象: どなたでも<br>申込〆切: 2024年4月25日(木)<br>URL: <a href=\"https://www.scout.or.jp/member/zenkokutaikai2024\">大会サイト</a>",
+    "lastmodified": "2024-05-05T22:46:32.000Z",
+    "location": " 秋田県秋田市",
     "sequence": "0",
     "status": "CONFIRMED",
-    "summary": "テストイベント5",
-    "transparency": "OPAQUE"
+    "summary": "ボーイスカウト全国大会2024",
+    "transparency": "TRANSPARENT"
   }
 ]
