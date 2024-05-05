@@ -18,9 +18,7 @@ nav.navbar {
 #weekly-calendar .fc-header-toolbar {
     display: none;
 }
-.fc-event-main {
-    background-color: 7ed9ff;
-}
+
 @media (prefers-color-scheme: dark) {
     .fc-list-day-text {
         color: #ffffff;
