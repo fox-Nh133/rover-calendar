@@ -1,22 +1,42 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-<meta charset="UTF-8">
-<title>カレンダー</title>
-<link href='https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/5.11.2/main.min.css' rel='stylesheet' />
-<script src='https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/5.11.2/main.min.js'></script>
+    <meta charset="UTF-8">
+    <title>イベントカレンダー</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.3/css/bulma.min.css">
 </head>
 <body>
-<div id='calendar'></div>
 
+<!-- モーダル -->
+<div id="eventModal" class="modal">
+    <div class="modal-background"></div>
+    <div class="modal-card">
+        <header class="modal-card-head">
+            <p class="modal-card-title" id="eventTitle">イベント詳細</p>
+            <button class="delete" aria-label="close" onclick="closeModal()"></button>
+        </header>
+        <section class="modal-card-body">
+            <p><strong>開始時間:</strong> <span id="eventStart"></span></p>
+            <p><strong>終了時間:</strong> <span id="eventEnd"></span></p>
+            <p><strong>説明:</strong> <span id="eventDescription"></span></p>
+            <p><strong>場所:</strong> <span id="eventLocation"></span></p>
+        </section>
+        <footer class="modal-card-foot">
+            <button class="button" onclick="closeModal()">閉じる</button>
+        </footer>
+    </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.3/js/bulma.js"></script>
 <script>
-document.addEventListener('DOMContentLoaded', function() {
-    var calendarEl = document.getElementById('calendar');
-    var calendar = new FullCalendar.Calendar(calendarEl, {
-        initialView: 'dayGridMonth'
-    });
-    calendar.render();
-});
+    function showModal() {
+        document.getElementById('eventModal').style.display = 'block';
+    }
+
+    function closeModal() {
+        document.getElementById('eventModal').style.display = 'none';
+    }
 </script>
+
 </body>
 </html>

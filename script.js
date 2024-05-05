@@ -32,7 +32,9 @@ document.addEventListener('DOMContentLoaded', () => {
           id: event.uid,
           title: event.summary,
           start: new Date(event.start),
-          end: new Date(event.end)
+          end: new Date(event.end),
+          description: event.description,
+          location: event.location
         }
       });
       return events;
@@ -42,17 +44,29 @@ document.addEventListener('DOMContentLoaded', () => {
 
     //// init fullcalendar
     getEventData().then(fullCalendarEvents => {
-      const calendarEl = document.getElementById('main-calendar');
+      const calendarEl = document.getElementById('mainCalendar');
       const calendar = new FullCalendar.Calendar(calendarEl, {
         initialView: 'dayGridMonth',
         locale: 'ja',
         events: fullCalendarEvents,
-        eventContent: function(arg) {
-          return { html: `<div class="fc-daygrid-event-dot"></div> <div class="fc-event-title">${arg.event.title}</div>`};
+        eventClick: function(info) {
+          document.getElementById('eventTitle').textContent = info.event.title;
+          document.getElementById('eventStartDate').textContent = info.event.start.toLocaleString();
+          document.getElementById('eventEndDate').textContent = info.event.end.toLocaleString();
+          document.getElementById('eventLocation').textContent = info.event.extendedProps.location;
+          document.getElementById('eventDescription').innerHTML = info.event.extendedProps.description;
+          document.getElementById('eventDetails').style.display = 'block';
         }
       });
       calendar.render();
     }).catch(err => console.error(err));
+
+    var closeEventDetails = document.getElementById('closeEventDetails');
+    if (closeEventDetails) {
+      closeEventDetails.addEventListener('click', function() {
+        document.getElementById('eventDetails').style.display = 'none';
+      });
+    }
 
     // init current date
     var today = new Date();
@@ -64,8 +78,8 @@ document.addEventListener('DOMContentLoaded', () => {
     var formattedDate = today.toLocaleDateString('ja-JP', options);
     var formattedWeekday = today.toLocaleDateString('ja-JP', weekday);
 
-    document.getElementById('current-date').textContent = formattedDate;
-    document.getElementById('current-day').textContent = formattedWeekday;
+    document.getElementById('currentDate').textContent = formattedDate;
+    document.getElementById('currentDay').textContent = formattedWeekday;
  
 
   });

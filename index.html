@@ -8,9 +8,6 @@
   <title>Rover Calendar</title>
     <!-- Bulma Version 1-->
     <link rel="stylesheet" href="https://unpkg.com/bulma@1.0.0/css/bulma.min.css" />
-    <!-- Font Awesome -->
-    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
-    integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <!-- custon css -->
     <link rel="stylesheet" href="style.css">
     <!-- FullCalendar cdn -->
@@ -67,11 +64,11 @@
             <div class="column is-one-third">
                 <div class="box">
                     <div class="has-text-centered">
-                        <h1 class="title" id="current-date">current date</h1>
-                        <p class="subtitle" id="current-day">current day</p>
+                        <h1 class="title" id="currentDate">current date</h1>
+                        <p class="subtitle" id="currentDay">current day</p>
                     </div>
                     <hr>
-                    <div id="weekly-calendar">
+                    <div id="weeklyCalendar">
                         <ul id="eventList"></ul>
                     </div>
                     <hr>
@@ -83,12 +80,73 @@
             <!-- Calendar view -->
             <div class="column">
                 <div class="box">
-                    <div id="main-calendar"></div>
+                    <div id="mainCalendar"></div>
                 </div>
             </div>
         </div>
     </div>
   </section>
+  <!-- event details | modal window -->
+  <div id="eventDetails">
+    <div class="modal-card">
+      <header class="modal-card-head">
+        <strong class="modal-card-title" id="eventTitle">イベント詳細</strong>
+        <button class="delete" aria-label="close" id="closeEventDetails"></button>
+        <hr>
+      </header>
+      <section class="modal-card-body">
+        <div class="columns">
+          <div class="column is-2">
+            <div class="column">
+              <div class="icon">
+                <img src="assets/clock.svg">
+              </div>
+            </div>
+          </div>
+          <div class="column">
+            <span id="eventStartDate"></span>
+            <span> - </span>
+            <span id="eventEndDate"></span>
+          </div>
+        </div>
+        <div class="columns">
+          <div class="column is-2">
+            <div class="column">
+              <div class="icon">
+                <img src="assets/location.svg">
+              </div>
+            </div>
+          </div>
+          <div class="column">
+            <span id="eventLocation"></span>
+          </div>
+        </div>
+        <div class="columns">
+          <div class="column is-2">
+            <div class="column">
+              <div class="icon">
+                <img src="assets/line-attach-file.svg">
+              </div>
+            </div>
+          </div>
+          <div class="column">
+            <span id="eventDescription"></span>
+          </div>
+      </section>
+      <hr>
+      <footer class="modal-card-foot">
+        <div class="buttons">
+          <button class="button is-info">
+            <p>カレンダーに追加</p>
+            <div class="icon">
+              <img src="assets/download.svg">
+            </div>
+          </button>
+          <button class="button">閉じる</button>
+        </div>
+      </footer>
+    </div>
+  </div>
 
   <!-- Image -->
   <section class="hero ">
