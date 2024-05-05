@@ -12,8 +12,6 @@
     <link rel="stylesheet" href="style.css">
     <!-- FullCalendar cdn -->
     <script src="/lib/fullcalendar-6.1.11/dist/index.global.js"></script>
-    <!-- ical.js  -->
-    <script src="//cdnjs.cloudflare.com/ajax/libs/ical.js/0.0.3/ical.min.js"></script>
 </head>
 
 <body>
@@ -70,13 +68,41 @@
                     <hr>
                     <div class="block">
                       <p id="closestEvent">直近のイベント</p>
-                      <strong id="closestEventTitle">イベントタイトル</strong>
-                      <p id="closestEventDate">イベント日時</p>
-                      <p id="closestEventLocation">イベント場所</p>
-                      <p id="closestEventDescription">イベント詳細</p>
                     </div>
-                    <div id="weeklyCalendar">
-                        <ul id="eventList"></ul>
+                    <div class="block has-text-centered">
+                      <strong id="closestEventTitle"></strong>
+                    </div>
+                    <div class="columns">
+                      <div class="column is-one-fifth has-text-centered">
+                        <div class="icon">
+                          <img src="assets/clock.svg">
+                        </div>
+                      </div>
+                      <div class="column">
+                        <span id="closestEventStartDate"></span>
+                        <span> - </span>
+                        <span id="closestEventEndDate"></span>
+                      </div>
+                    </div>
+                    <div class="columns">
+                      <div class="column is-one-fifth has-text-centered">
+                        <div class="icon">
+                          <img src="assets/location.svg">
+                        </div>
+                      </div>
+                      <div class="column">
+                        <span id="closestEventLocation"></span>
+                      </div>
+                    </div>
+                    <div class="columns">
+                      <div class="column is-one-fifth has-text-centered">
+                        <div class="icon">
+                          <img src="assets/line-attach-file.svg">
+                        </div>
+                      </div>
+                      <div class="column">
+                        <span id="closestEventDescription"></span>
+                      </div>
                     </div>
                     <hr>
                     <div class="block">
@@ -96,12 +122,16 @@
   <!-- event details | modal window -->
   <div id="eventDetails">
     <div class="modal-card">
-      <header class="modal-card-head">
-        <strong class="modal-card-title" id="eventTitle">イベント詳細</strong>
-        <button class="delete close-event-details" aria-label="close"></button>
-        <hr>
-      </header>
+      <span id="eventId"></span>
       <section class="modal-card-body">
+        <div class="media">
+          <div class="media-content">
+            <strong id="eventTitle"></strong>
+          </div>
+          <div class="media-right">
+            <button class="delete close-event-details" aria-label="close"></button>
+          </div> 
+        </div>
         <div class="columns">
           <div class="column is-2 has-text-centered">
             <div class="icon">
@@ -137,7 +167,7 @@
       <hr>
       <footer class="modal-card-foot">
         <div class="buttons">
-          <button class="button is-info">
+          <button class="button is-info" id="exportEvent">
             <p>カレンダーに追加</p>
             <div class="icon">
               <img src="assets/download.svg">

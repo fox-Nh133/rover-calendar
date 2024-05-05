@@ -42,6 +42,10 @@ nav.navbar {
     overflow: hidden;
 }
 
+#eventId {
+    display: none;
+}
+
 /* fullcalendar customaization */
 #weekly-calendar .fc-header-toolbar {
     display: none;

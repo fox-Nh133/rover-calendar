@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', () => {
-
     // Get all "navbar-burger" elements
     const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
 
@@ -40,7 +39,12 @@ document.addEventListener('DOMContentLoaded', () => {
       return events;
     }
 
-    getEventData().then(events => console.log(events)).catch(err => console.error(err));
+    //// check if two dates are the same
+    function isSameDate(date1, date2) {
+      return date1.getFullYear() === date2.getFullYear() &&
+        date1.getMonth() === date2.getMonth() &&
+        date1.getDate() === date2.getDate();
+    }
 
     //// init fullcalendar
     getEventData().then(fullCalendarEvents => {
@@ -53,11 +57,6 @@ document.addEventListener('DOMContentLoaded', () => {
           // set event title
           document.getElementById('eventTitle').textContent = info.event.title;
           // set event date
-          function isSameDate(date1, date2) {
-            return date1.getFullYear() === date2.getFullYear() &&
-              date1.getMonth() === date2.getMonth() &&
-              date1.getDate() === date2.getDate();
-          }
           document.getElementById('eventStartDate').textContent = info.event.start.toLocaleString('ja-JP', { weekday: 'short', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric'});
 
           if (isSameDate(info.event.start, info.event.end)) {
@@ -68,6 +67,9 @@ document.addEventListener('DOMContentLoaded', () => {
           // set event location and description
           document.getElementById('eventLocation').textContent = info.event.extendedProps.location;
           document.getElementById('eventDescription').innerHTML = info.event.extendedProps.description;
+          // set event id
+          document.getElementById('eventId').textContent = info.event.extendedProps.id;
+          // show event details
           document.getElementById('eventDetails').style.display = 'block';
         }
       });
@@ -82,6 +84,23 @@ document.addEventListener('DOMContentLoaded', () => {
         document.getElementById('eventDetails').style.display = 'none';
       });
     });
+
+    // // export event as ics file
+    // const exportEvent = document.getElementById('exportEvent');
+    // exportEvent.addEventListener('click', () => {
+    // const eventId = getElementById('eventId').textContent;
+    // const icsParts = [
+    //   'BEGIN:VCALENDAR',
+    //   'VERSION:2.0',
+    //   'BEGIN:VEVENT',
+    //   `DTSTART:${event.start}`,
+    //   `DTEND:${event.end}`,
+    //   `SUMMARY:${event.summary}`,
+    //   `DESCRIPTION:${event.description}`,
+    //   `LOCATION:${event.location}`,
+    //   'END:VEVENT'
+    // ];
+    
 
     // init current date
     var today = new Date();
@@ -99,21 +118,25 @@ document.addEventListener('DOMContentLoaded', () => {
     // init closest event window
     //// get closest event
     getEventData().then(events => {
-      const closestEvent = events.filter(event => event.start > today).sort((a, b) => a.start - b.start)[0];
+      const closestEvent = events.filter(event => new Date(event.start) > today).sort((a, b) => new Date(a.start) - new Date(b.start))[0];
+      console.log(closestEvent);
       return closestEvent;
     }).then(closestEvent => {
       if (closestEvent) {
-        const closestEventDate = closestEvent.start.toLocaleDateString('ja-JP', options);
-        const closestEventWeekday = closestEvent.start.toLocaleDateString('ja-JP', weekday);
-        document.getElementById('closestEventDate').textContent = closestEventDate;
-        document.getElementById('closestEventDay').textContent = closestEventWeekday;
-        document.getElementById('closestEventTitle').textContent = closestEvent.title;
+        // set event title
+        document.getElementById('closestEventTitle').innerText = closestEvent.title;
+        // set event date
+        document.getElementById('closestEventStartDate').textContent = closestEvent.start.toLocaleString('ja-JP', {weekday: 'short', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric'});
+        if (isSameDate(closestEvent.start, closestEvent.end)) {
+          document.getElementById('closestEventEndDate').textContent = closestEvent.end.toLocaleString('ja-JP', { hour: 'numeric', minute: 'numeric'});
+        } else {
+          document.getElementById('closestEventEndDate').textContent = closestEvent.end.toLocaleString('ja-JP', {weekday: 'short', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric'});
+        }
+        // set event location and description
         document.getElementById('closestEventLocation').textContent = closestEvent.location;
         document.getElementById('closestEventDescription').textContent = closestEvent.description;
       } else {
         document.getElementById('closestEventDate').textContent = 'No upcoming events';
       }
     }).catch(err => console.error(err));
- 
-
-  });
+});
