@@ -163,7 +163,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         // set event location and description
         document.getElementById('closestEventLocation').textContent = closestEvent.location;
-        document.getElementById('closestEventDescription').textContent = closestEvent.description;
+        document.getElementById('closestEventDescription').innerHTML = closestEvent.description;
       } else {
         document.getElementById('closestEventDate').textContent = 'No upcoming events';
       }
