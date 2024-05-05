@@ -9,7 +9,11 @@ async function fetchAndSaveCalendar() {
     const response = await fetch(url);
     const data = await response.text();
     const parsedData = ical.parseICS(data);
-    const events = Object.values(parsedData).filter(e => e.type === 'VEVENT');
+    const events = Object.values(parsedData).filter(e => e.type === 'VEVENT').map(event => {
+      const filteredEvents = { ...event};
+      delete filteredEvents.dtstamp;
+      return filteredEvents
+    });
     fs.writeFileSync('calendar.json', JSON.stringify(events, null, 2));
     console.log('Calendar data updated successfully.');
   } catch (error) {
