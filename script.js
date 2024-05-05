@@ -68,7 +68,7 @@ document.addEventListener('DOMContentLoaded', () => {
           document.getElementById('eventLocation').textContent = info.event.extendedProps.location;
           document.getElementById('eventDescription').innerHTML = info.event.extendedProps.description;
           // set event id
-          document.getElementById('eventId').textContent = info.event.extendedProps.id;
+          document.getElementById('eventId').textContent = info.event.id;
           // show event details
           document.getElementById('eventDetails').style.display = 'block';
         }
@@ -85,22 +85,51 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
 
-    // // export event as ics file
-    // const exportEvent = document.getElementById('exportEvent');
-    // exportEvent.addEventListener('click', () => {
-    // const eventId = getElementById('eventId').textContent;
-    // const icsParts = [
-    //   'BEGIN:VCALENDAR',
-    //   'VERSION:2.0',
-    //   'BEGIN:VEVENT',
-    //   `DTSTART:${event.start}`,
-    //   `DTEND:${event.end}`,
-    //   `SUMMARY:${event.summary}`,
-    //   `DESCRIPTION:${event.description}`,
-    //   `LOCATION:${event.location}`,
-    //   'END:VEVENT'
-    // ];
-    
+    // export event as ics file
+    const exportEvent = document.getElementById('exportEvent');
+    async function getEventById(eventId) {
+      const events = await getEventData();
+      console.log(events); // データ配列を確認
+      console.log('Searching for Event ID:', eventId); // 検索中のIDを確認
+      const event = events.find(event => event.id === eventId);
+      return event;
+    }
+    function formatICSDate(date) {
+      const pad = num => num.toString().padStart(2, '0');
+      return `${date.getUTCFullYear()}${pad(date.getUTCMonth() + 1)}${pad(date.getUTCDate())}T${pad(date.getUTCHours())}${pad(date.getUTCMinutes())}${pad(date.getUTCSeconds())}`;
+    }
+
+    exportEvent.addEventListener('click', () => {
+      const eventId = document.getElementById('eventId').textContent;
+      getEventById(eventId).then(event => {
+        const icsParts = [
+          'BEGIN:VCALENDAR',
+          'VERSION:2.0',
+          'CALSCALE:GREGORIAN',
+          'BEGIN:VEVENT',
+          `SUMMARY:${event.title}`,
+          `DTSTART:${formatICSDate(new Date(event.start))}`,
+          `DTEND:${formatICSDate(new Date(event.end))}`,
+          `LOCATION:${event.location}`,
+          `DESCRIPTION:${event.description}`,
+          'STATUS:CONFIRMED',
+          'END:VEVENT',
+          'END:VCALENDAR'
+        ];
+        // create ics file
+        const icsData = icsParts.join('\r\n');
+        const blob = new Blob([icsData], { type: 'text/calendar;charset=utf-8' });
+        // create download link
+        const url = window.URL.createObjectURL(blob);
+        const link = document.createElement('a');
+        link.href = url;
+        link.download = 'event.ics';
+        link.click();
+        // cleanup
+        window.URL.revokeObjectURL(url);
+      }
+      ).catch(err => console.error(err));
+    });
 
     // init current date
     var today = new Date();
@@ -139,4 +168,16 @@ document.addEventListener('DOMContentLoaded', () => {
         document.getElementById('closestEventDate').textContent = 'No upcoming events';
       }
     }).catch(err => console.error(err));
+
+    // copy ical url
+    copyICALUrl = document.getElementById('copyICALUrl');
+    function copyICALToClipboard() {
+      const icalURL = document.getElementById('icalURL');
+      icalURL.select();
+      icalURL.setSelectionRange(0, 99999); // for mobile devices
+      document.execCommand('copy');
+    }
+
+    copyICALUrl.addEventListener('click', copyICALToClipboard);
+
 });
