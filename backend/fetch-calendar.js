@@ -3,6 +3,9 @@ import fs from 'fs';
 import fetch from 'node-fetch';
 import ical from 'ical';
 
+// set Time zone
+process.env.TZ = 'Asia/Tokyo';
+
 async function fetchAndSaveCalendar() {
   const url = 'https://calendar.google.com/calendar/ical/27368b164f2ff54d4b7f165793fba4d2ef0706b2de617768c8c030ad0500e14c%40group.calendar.google.com/public/basic.ics';
   try {
