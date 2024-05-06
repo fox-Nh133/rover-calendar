@@ -41,7 +41,6 @@ nav.navbar {
 #eventDetails .modal-card-body {
     overflow: hidden;
 }
-
 #eventId {
     display: none;
 }
@@ -71,4 +70,16 @@ nav.navbar {
     .fc-daygrid-day-number {
         color: #ffffff;
     }
+}
+
+/* unordered list */
+ul {
+    list-style-type: disc;
+    padding: 10px;
+}
+
+/* footer */
+footer{
+    position: relative;
+    margin-top: auto;
 }

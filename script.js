@@ -52,6 +52,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const calendar = new FullCalendar.Calendar(calendarEl, {
         initialView: 'dayGridMonth',
         locale: 'ja',
+        height: 'auto',
         events: fullCalendarEvents,
         eventClick: function(info) {
           // set event title

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Rover Calendar</title>
+    <!-- Bulma Version 1-->
+    <link rel="stylesheet" href="https://unpkg.com/bulma@1.0.0/css/bulma.min.css" />
+    <!-- custon css -->
+    <link rel="stylesheet" href="style.css">
+    <!-- FullCalendar cdn -->
+    <script src="/lib/fullcalendar-6.1.11/dist/index.global.js"></script>
+</head>
+
+<body>
+  <!-- START NAV -->
+  <nav class="navbar">
+    <div class="container">
+      <div class="navbar-brand">
+        <a class="navbar-item" href="../">
+            <h1 class="title">ローバーカレンダー</h1>
+
+        </a>
+        <span class="navbar-burger burger" data-target="navbarMenu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </span>
+      </div>
+      <div id="navbarMenu" class="navbar-menu">
+        <div class="navbar-end">
+          <div class=" navbar-item">
+            <div class="control has-icons-left">
+              <input class="input is-rounded" type="email" placeholder="Search">
+              <span class="icon is-left">
+                <i class="fa fa-search"></i>
+              </span>
+            </div>
+          </div>
+          <a class="navbar-item is-size-5 has-text-weight-semibold" href="/">
+            ホーム
+          </a>
+          <a class="navbar-item is-active is-size-5 has-text-weight-semibold" href="about.html">
+            このサイトについて
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <!-- END NAV -->
+
+  <!-- Main view -->
+  <section class="section">
+    <div class="container">
+        <div class="block">
+            <h1 class="title">このサイトについて</h1>
+            <p>"ローバーカレンダー"はローバー向けのイベントの開催情報を掲載するウェブサイトです。身の回りでどんなローバーイベントが行われているかが分かるポータルサイトがあればと思い、制作しました。</p>
+        </div>
+        <div class="block">
+            <h2 class="subtitle">使い方</h2>
+            <p>ホーム画面には今後のイベントがカレンダー形式で表示されます。イベントの詳細を知りたい場合はカレンダーをクリックしてください。</p>
+        </div>
+        <div class="block">
+            <h2 class="subtitle">イベント運営者の方へ</h2>
+            <p>本サイトへのイベント登録のご協力お願いします。協力して頂ける方は<a href=caution.html>イベント登録の注意事項</a>をご確認の上、ホームの「予定を追加」からフォームへイベント情報を入力して下さい。なおセキュリティの観点から時間をおいてサイトに反映されるようになっています。ご了承ください。</p>
+        </div>
+        <div class="block">
+            <h2 class="subtitle">サイト運営ポリシー</h2>
+            <ol>
+                <div class="block">
+                <li>サイト情報の正確性について</li>
+                <p>当サイトに掲載されているイベント情報は公開情報やフォームにて提供された情報が基になっています。情報の正確性、完全性、有用性等について、当サイト運営者は可能な限り確認を行っておりますが、その内容を保証するものではありません。イベントの詳細や変更については、必ず主催者の公式発表をご確認ください。</p>
+                </div>
+                <div class="block">
+                <li>免責事項</li>
+                    <ul>
+                        <li>当サイトに掲載された情報を利用したことにより生じたいかなるトラブルや損害に対しても、当サイト運営者は一切の責任を負いません。
+                        </li>
+                        <li>
+                            外部サイトへのリンクが含まれている場合、リンク先のサイトの内容について当サイト運営者は一切の責任を負いません。
+                        </li>
+                    </ul>
+                </div>
+                <div class="block">
+                <li>掲載するイベント情報について</li>
+                <p>当サイトでは、イベント運営者の方からイベント情報の投稿を受け付けております。頂いた情報については以下の基準に基づいて掲載可否を判断します。以下の基準に該当する場合は投稿者への通告なしに非掲載とする場合があります。</p>
+                    <ul>
+                        <li>イベントの内容がローバー活動に関連していない場合</li>
+                        <li>第三者の権利を侵害する内容が含まれている場合</li>
+                        <li>明らかに事実と異なる情報を含んでいる場合</li>
+                    </ul>
+                </p>
+                </div>
+            </ol>
+        </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="content has-text-centered">
+      <p>
+        <strong>Rover Calendar</strong> by <a href="https://masaya.narita.info">Masaya Narita</a>
+      </p>
+      <p>
+        Bulma - Blog theme by <a href="https://gonzalojs.com">Gonzalo Gutierrez</a>. Based on the <a
+          href="http://jigsaw-blog-staging.tighten.co/">jigsaw-blog</a>. The source code is licensed
+        <a href="http://opensource.org/licenses/mit-license.php">MIT</a>
+      </p>
+    </div>
+  </footer>
+  <script src="script.js"></script>
+
+</body>
+
+</html>
