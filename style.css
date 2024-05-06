@@ -21,7 +21,7 @@ nav.navbar {
     left: 50%;
     width:500px;
     transform: translate(-50%, -50%);
-    background: white;
+    background: whitesmoke;
     color: gray;
     padding: 20px;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
