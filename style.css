@@ -45,6 +45,12 @@ nav.navbar {
     display: none;
 }
 
+@media (perfers-color-scheme: dark) {
+    #eventDetails .modal-card-body strong{
+        color: #000000;
+    }
+}
+
 /* fullcalendar customaization */
 #weekly-calendar .fc-header-toolbar {
     display: none;
