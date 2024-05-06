@@ -27,11 +27,23 @@ document.addEventListener('DOMContentLoaded', () => {
       const response = await fetch('backend/calendar.json');
       const data = await response.json();
       const events = data.map(event => {
+        // create Date  object
+        const startDate = new Date(event.start);
+        const endDate = new Date(event.end);
+      
+        // Check if endDate is at 0:00, if so, adjust it to the day before
+        if (endDate.getHours() === 0 && endDate.getMinutes() === 0 && endDate.getSeconds() === 0) {
+          endDate.setDate(endDate.getDate() - 1);
+          endDate.setHours(23);
+          endDate.setMinutes(59);
+          endDate.setSeconds(59);
+        }
+
         return {
           id: event.uid,
           title: event.summary,
-          start: new Date(event.start),
-          end: new Date(event.end),
+          start: startDate,
+          end: endDate,
           description: event.description,
           location: event.location
         }
@@ -57,13 +69,29 @@ document.addEventListener('DOMContentLoaded', () => {
         eventClick: function(info) {
           // set event title
           document.getElementById('eventTitle').textContent = info.event.title;
-          // set event date
-          document.getElementById('eventStartDate').textContent = info.event.start.toLocaleString('ja-JP', { weekday: 'short', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric', timeZone: 'asia/Tokyo'});
-
-          if (isSameDate(info.event.start, info.event.end)) {
-            document.getElementById('eventEndDate').textContent = info.event.end.toLocaleString('ja-JP', { hour: 'numeric', minute: 'numeric', timeZone: 'asia/Tokyo'});
+          // set event start date
+          let startDateOptions, endDateOptions;
+          if (info.event.start.getHours() === 0 && info.event.start.getMinutes() === 0 && info.event.start.getSeconds() === 0) {
+            startDateOptions = { weekday: 'short', month: 'long', day: 'numeric', timeZone: 'asia/Tokyo'};
           } else {
-            document.getElementById('eventEndDate').textContent = info.event.end.toLocaleString('ja-JP', { weekday: 'short', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric', timeZone : 'asia/Tokyo'});
+            startDateOptions = { weekday: 'short', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric', timeZone: 'asia/Tokyo'};
+          }
+          document.getElementById('eventStartDate').textContent = info.event.start.toLocaleString('ja-JP', startDateOptions);
+          // set event end date
+          if (isSameDate(info.event.start, info.event.end)) {
+            if (info.event.end.getHours() === 23 && info.event.end.getMinutes() === 59 && info.event.end.getSeconds() === 59) {
+              endDateOptions = { weekday: 'short', month: 'long', day: 'numeric', timeZone: 'asia/Tokyo'};
+            } else {
+              endDateOptions = { hour: 'numeric', minute: 'numeric', timeZone: 'asia/Tokyo' };
+            }
+            document.getElementById('eventEndDate').textContent = info.event.end.toLocaleString('ja-JP', endDateOptions);
+          } else {
+            if (info.event.end.getHours() === 23 && info.event.end.getMinutes() === 59 && info.event.end.getSeconds() === 59) {
+              endDateOptions = { weekday: 'short', month: 'long', day: 'numeric', timeZone: 'asia/Tokyo'};
+            } else {
+              endDateOptions = { hour: 'numeric', minute: 'numeric', timeZone: 'asia/Tokyo' };
+            }
+            document.getElementById('eventEndDate').textContent = info.event.end.toLocaleString('ja-JP', endDateOptions);
           }
           // set event location and description
           document.getElementById('eventLocation').textContent = info.event.extendedProps.location;
@@ -97,7 +125,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     function formatICSDate(date) {
       const pad = num => num.toString().padStart(2, '0');
-      return `${date.getUTCFullYear()}${pad(date.getUTCMonth() + 1)}${pad(date.getUTCDate())}T${pad(date.getUTCHours())}${pad(date.getUTCMinutes())}${pad(date.getUTCSeconds())}`;
+      return `${date.getFullYear()}${pad(date.getMonth() + 1)}${pad(date.getDate())}T${pad(date.getHours())}${pad(date.getMinutes())}${pad(date.getSeconds())}`;
     }
 
     exportEvent.addEventListener('click', () => {
@@ -153,12 +181,29 @@ document.addEventListener('DOMContentLoaded', () => {
       if (closestEvent) {
         // set event title
         document.getElementById('closestEventTitle').innerText = closestEvent.title;
-        // set event date
-        document.getElementById('closestEventStartDate').textContent = closestEvent.start.toLocaleString('ja-JP', {weekday: 'short', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric', timeZone: 'asia/Tokyo'});
-        if (isSameDate(closestEvent.start, closestEvent.end)) {
-          document.getElementById('closestEventEndDate').textContent = closestEvent.end.toLocaleString('ja-JP', { hour: 'numeric', minute: 'numeric', timeZone: 'asia/Tokyo'});
+        // set event start date
+        let startDateOptions, endDateOptions;
+        if (closestEvent.start.getHours() === 0 && closestEvent.start.getMinutes() === 0 && closestEvent.start.getSeconds() === 0) {
+          startDateOptions = { weekday: 'short', month: 'long', day: 'numeric', timeZone: 'asia/Tokyo'};
         } else {
-          document.getElementById('closestEventEndDate').textContent = closestEvent.end.toLocaleString('ja-JP', {weekday: 'short', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric', timeZone: 'asia/Tokyo'});
+          startDateOptions = { weekday: 'short', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric', timeZone: 'asia/Tokyo'};
+        }
+        document.getElementById('closestEventStartDate').textContent = closestEvent.start.toLocaleString('ja-JP', startDateOptions);
+        // set event end date
+        if (isSameDate(closestEvent.start, closestEvent.end)) {
+          if (closestEvent.end.getHours() === 23 && closestEvent.end.getMinutes() === 59 && closestEvent.end.getSeconds() === 59) {
+            endDateOptions = { weekday: 'short', month: 'long', day: 'numeric', timeZone: 'asia/Tokyo'};
+          } else {
+            endDateOptions = { hour: 'numeric', minute: 'numeric', timeZone: 'asia/Tokyo' };
+          }
+          document.getElementById('closestEventEndDate').textContent = closestEvent.end.toLocaleString('ja-JP', endDateOptions);
+        } else {
+          if (closestEvent.end.getHours() === 23 && closestEvent.end.getMinutes() === 59 && closestEvent.end.getSeconds() === 59) {
+            endDateOptions = { weekday: 'short', month: 'long', day: 'numeric', timeZone: 'asia/Tokyo'};
+          } else {
+            endDateOptions = { hour: 'numeric', minute: 'numeric', timeZone: 'asia/Tokyo' };
+          }
+          document.getElementById('closestEventEndDate').textContent = closestEvent.end.toLocaleString('ja-JP', endDateOptions);
         }
         // set event location and description
         document.getElementById('closestEventLocation').textContent = closestEvent.location;
