@@ -21,6 +21,13 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     }
 
+    // init add event buttons
+    const addEventButton = document.getElementById('addEventButton');
+
+    addEventButton.addEventListener('click', function() {
+      alert('現在は限られたユーザーだけがイベントを追加できるようになっています。');
+    });
+
     // init monthly calendar (fullcalendar integration)
     //// parse json data
     async function getEventData() {
