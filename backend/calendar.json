@@ -28,5 +28,102 @@
     "status": "CONFIRMED",
     "summary": "日本ローバームート2024",
     "transparency": "TRANSPARENT"
+  },
+  {
+    "type": "VEVENT",
+    "params": [],
+    "start": "2024-11-01T15:00:00.000Z",
+    "end": "2024-11-04T15:00:00.000Z",
+    "uid": "0k5lbdda42d1r2ujhh5v0nr479@google.com",
+    "created": "2024-05-13T04:09:02.000Z",
+    "description": "参加対象: ローバースカウトおよび同年代の指導者（運営委員として）<br>申込〆切: 4月19日（金）<br>　　※〆切日までに日本連盟必着<br>URL: <a href=\"https://www.scout.or.jp/member/scout-forum\">大会サイト</a><br><br>※ベンチャー参加者の情報は大会サイトを参照してください。",
+    "lastmodified": "2024-05-13T04:09:02.000Z",
+    "location": "兵庫県立嬉野台生涯教育センター",
+    "sequence": "0",
+    "status": "CONFIRMED",
+    "summary": "第25回 全国スカウトフォーラム",
+    "transparency": "TRANSPARENT"
+  },
+  {
+    "type": "VEVENT",
+    "params": [],
+    "start": "2024-04-04T23:00:00.000Z",
+    "end": "2024-04-05T07:00:00.000Z",
+    "rrule": {
+      "_string": null,
+      "_cache": {
+        "all": false,
+        "before": [],
+        "after": [],
+        "between": []
+      },
+      "origOptions": {
+        "freq": 2,
+        "wkst": {
+          "weekday": 6
+        },
+        "until": "2024-05-31T14:59:59.000Z",
+        "byweekday": [
+          {
+            "weekday": 4
+          },
+          {
+            "weekday": 5
+          },
+          {
+            "weekday": 6
+          }
+        ],
+        "dtstart": "2024-04-04T23:00:00.000Z"
+      },
+      "options": {
+        "freq": 2,
+        "wkst": 6,
+        "until": "2024-05-31T14:59:59.000Z",
+        "byweekday": [
+          4,
+          5,
+          6
+        ],
+        "dtstart": "2024-04-04T23:00:00.000Z",
+        "interval": 1,
+        "count": null,
+        "tzid": null,
+        "bysetpos": null,
+        "bymonth": null,
+        "bymonthday": [],
+        "bynmonthday": [],
+        "byyearday": null,
+        "byweekno": null,
+        "bynweekday": null,
+        "byhour": [
+          23
+        ],
+        "byminute": [
+          0
+        ],
+        "bysecond": [
+          0
+        ],
+        "byeaster": null
+      },
+      "timeset": [
+        {
+          "hour": 23,
+          "minute": 0,
+          "second": 0,
+          "millisecond": 0
+        }
+      ]
+    },
+    "uid": "6otrkcpvg84tsjre4oeooscsk1@google.com",
+    "created": "2024-05-13T04:15:56.000Z",
+    "description": "参加対象: 日本連盟に加盟する全国のローバースカウト、指導者などの加盟員（団委員、その他役務を含む）<br>申込〆切: 希望する週末の木曜日まで<br>URL: <a href=\"https://www.scout.or.jp/member/r6notohantou-jishin-volunteer\">特設ページ</a>",
+    "lastmodified": "2024-05-13T04:15:56.000Z",
+    "location": "珠洲市　直公民館（ただこうみんかん） 石川県珠洲市野々江町ホの部80番地の1",
+    "sequence": "0",
+    "status": "CONFIRMED",
+    "summary": "令和6年 能登半島地震 支援ボランティア",
+    "transparency": "OPAQUE"
   }
 ]
