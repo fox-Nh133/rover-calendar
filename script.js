@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // init monthly calendar (fullcalendar integration)
     //// parse json data
     async function getEventData() {
-      const response = await fetch('backend/calendar.json');
+      const response = await fetch('backend/expanded-calendar.json');
       const data = await response.json();
       const events = data.map(event => {
         // create Date  object
@@ -45,7 +45,6 @@ document.addEventListener('DOMContentLoaded', () => {
           endDate.setMinutes(59);
           endDate.setSeconds(59);
         }
-
         return {
           id: event.uid,
           title: event.summary,
@@ -57,6 +56,7 @@ document.addEventListener('DOMContentLoaded', () => {
       });
       return events;
     }
+    
 
     //// check if two dates are the same
     function isSameDate(date1, date2) {
@@ -64,6 +64,9 @@ document.addEventListener('DOMContentLoaded', () => {
         date1.getMonth() === date2.getMonth() &&
         date1.getDate() === date2.getDate();
     }
+
+    //// --debug print out--
+    getEventData().then(events => console.log(events)).catch(error => console.error('Error fetching events:', error));
 
     //// init fullcalendar
     getEventData().then(fullCalendarEvents => {
