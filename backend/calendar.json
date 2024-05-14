@@ -125,5 +125,20 @@
     "status": "CONFIRMED",
     "summary": "令和6年 能登半島地震 支援ボランティア",
     "transparency": "OPAQUE"
+  },
+  {
+    "type": "VEVENT",
+    "params": [],
+    "start": "2024-08-12T15:00:00.000Z",
+    "end": "2024-08-25T15:00:00.000Z",
+    "uid": "7p5f2id53du3f7naaofkdpthc6@google.com",
+    "created": "2024-05-14T07:22:45.000Z",
+    "description": "参加費: 約35万円<br>申込〆切: 4月5日(金)<br>URL: <a href=\"https://scoutconference.org/\">大会サイト</a>、<a href=\"https://www.scout.or.jp/member/43rd_worldscout_conference\">派遣情報</a>",
+    "lastmodified": "2024-05-14T07:22:45.000Z",
+    "location": "エジプト カイロ",
+    "sequence": "0",
+    "status": "CONFIRMED",
+    "summary": "第43回世界スカウト会議 青年参加者派遣",
+    "transparency": "TRANSPARENT"
   }
 ]
