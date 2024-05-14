@@ -25,7 +25,7 @@ jobs:
       - name: Fetch and parce ICS
         run: |
           node fetch-calendar.js
-          node convert-calendar.js
+          node convert-events.js
         working-directory: ./backend
 
       - name: Commit and push if changes
