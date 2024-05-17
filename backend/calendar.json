@@ -17,21 +17,6 @@
   {
     "type": "VEVENT",
     "params": [],
-    "start": "2024-09-02T15:00:00.000Z",
-    "end": "2024-09-08T15:00:00.000Z",
-    "uid": "2epqdcuskj1ii6aoto002f7vjq@google.com",
-    "created": "2024-05-06T08:43:15.000Z",
-    "description": "参加費: 30,000円<br>参加対象: ローバースカウト及び同年代指導者<br>申込〆切:<br>　　サポートチーム: 4月30日(火)<br>　　参加者: 5月15日(水)<br>　　※締切日までに日本連盟必着<br>URL: <a href=\"https://www.scout.or.jp/member/rovermoot2024\" target=\"_blank\">大会サイト</a>",
-    "lastmodified": "2024-05-06T09:18:01.000Z",
-    "location": "ボーイスカウト日本連盟那須野営場, 日本、〒329-2756 栃木県那須塩原市西三島７丁目３３４",
-    "sequence": "0",
-    "status": "CONFIRMED",
-    "summary": "日本ローバームート2024",
-    "transparency": "TRANSPARENT"
-  },
-  {
-    "type": "VEVENT",
-    "params": [],
     "start": "2024-11-01T15:00:00.000Z",
     "end": "2024-11-04T15:00:00.000Z",
     "uid": "0k5lbdda42d1r2ujhh5v0nr479@google.com",
@@ -139,6 +124,21 @@
     "sequence": "0",
     "status": "CONFIRMED",
     "summary": "第43回世界スカウト会議 青年参加者派遣",
+    "transparency": "TRANSPARENT"
+  },
+  {
+    "type": "VEVENT",
+    "params": [],
+    "start": "2024-09-02T15:00:00.000Z",
+    "end": "2024-09-08T15:00:00.000Z",
+    "uid": "2epqdcuskj1ii6aoto002f7vjq@google.com",
+    "created": "2024-05-06T08:43:15.000Z",
+    "description": "参加費: 30,000円\n参加対象: ローバースカウト及び同年代指導者\n申込〆切:\n　　サポートチーム: 4月30日(火)\n　　参加者: 5月15日(水)\nURL: 大会サイト",
+    "lastmodified": "2024-05-17T20:51:00.000Z",
+    "location": "ボーイスカウト日本連盟那須野営場, 日本、〒329-2756 栃木県那須塩原市西三島７丁目３３４",
+    "sequence": "0",
+    "status": "CONFIRMED",
+    "summary": "日本ローバームート2024",
     "transparency": "TRANSPARENT"
   }
 ]
