@@ -16,15 +16,15 @@ nav.navbar {
 
 /* button customaization */
 .button.is-custom-color {
-    background-color: #527dff;
-    border-color: #527dff;
+    background-color: #527dff !important;
+    border-color: #527dff !important;
     border: none;
     cursor: pointer;
 }
 
 .button.is-custom-color:hover {
-    background-color: #6c91ff;
-    border-color: #6c91ff;
+    background-color: #6c91ff !important;
+    border-color: #6c91ff !important;
 }
 
 /* Today View */
