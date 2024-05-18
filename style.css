@@ -79,9 +79,16 @@ nav.navbar {
     display: none;
 }
 
+/* show list view option for narrow viewport */
 @media (max-width: 600px) {
     #isListView {
         display: block;
+    }
+}
+/* hide today button to avoid layout break for narrow viewport( < 400px) */
+@media (max-width: 400px) {
+    .fc-today-button {
+        display: none;
     }
 }
 
