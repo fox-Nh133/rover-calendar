@@ -79,7 +79,6 @@ document.addEventListener('DOMContentLoaded', () => {
       return events;
     }
     
-
     //// check if two dates are the same
     function isSameDate(date1, date2) {
       return date1.getFullYear() === date2.getFullYear() &&
@@ -91,9 +90,11 @@ document.addEventListener('DOMContentLoaded', () => {
     getEventData().then(events => console.log(events)).catch(error => console.error('Error fetching events:', error));
 
     //// init fullcalendar
+    let calendar; // Define calendar object outside the promise chain
+
     getEventData().then(fullCalendarEvents => {
       const calendarEl = document.getElementById('mainCalendar');
-      const calendar = new FullCalendar.Calendar(calendarEl, {
+      calendar = new FullCalendar.Calendar(calendarEl, {
         initialView: 'dayGridMonth',
         locale: 'ja',
         height: 'auto',
@@ -136,6 +137,22 @@ document.addEventListener('DOMContentLoaded', () => {
       });
       calendar.render();
     }).catch(err => console.error(err));
+
+    //// init calendar view switch
+    const changeViewButton = document.getElementById('isListView');
+
+    console.log(changeViewButton);
+
+    changeViewButton.addEventListener('click', function() {
+
+      console.log(changeViewButton.checked);
+
+      if (changeViewButton.checked) {
+        calendar.changeView('listMonth');
+      } else {
+        calendar.changeView('dayGridMonth');
+      }
+    });
 
     // close event details
     const closeEventDetails = document.querySelectorAll('.close-event-details');

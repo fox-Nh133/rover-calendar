@@ -48,10 +48,11 @@ nav.navbar {
     overflow: hidden;
 }
 
+/* small window for smartphone */
 @media (max-width: 600px) {
     #eventDetails {
-        width: 300px; /* スマートフォンではより狭い幅 */
-        padding: 10px; /* 小さいデバイスではパディングも少なく */
+        width: 300px;
+        padding: 10px;
     }
 }
 
@@ -74,6 +75,15 @@ nav.navbar {
     display: none;
 }
 
+#isListView {
+    display: none;
+}
+
+@media (max-width: 600px) {
+    #isListView {
+        display: block;
+    }
+}
 
 @media (prefers-color-scheme: dark) {
     .fc-col-header th{
