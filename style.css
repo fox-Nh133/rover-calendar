@@ -14,6 +14,19 @@ nav.navbar {
     align-items: center;
 }
 
+/* button customaization */
+.button.custom-color {
+    background-color: #527dff;
+    border-color: #527dff;
+    border: none;
+    cursor: pointer;
+}
+
+.button.custom-color:hover {
+    background-color: #6c91ff;
+    border-color: #6c91ff;
+}
+
 /* Today View */
 .icon-black {
     display: block;
@@ -88,12 +101,15 @@ nav.navbar {
 /* hide today button to avoid layout break for narrow viewport( < 400px) */
 @media (max-width: 400px) {
     .fc-today-button {
-        display: none;
+        display: none !important;
     }
 }
 
 @media (prefers-color-scheme: dark) {
     .fc-col-header th{
+        background-color: #2c3e50;
+    }
+    .fc-list-day th{
         background-color: #2c3e50;
     }
     .fc-list-day-text {
