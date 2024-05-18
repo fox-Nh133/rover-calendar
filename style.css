@@ -18,6 +18,7 @@ nav.navbar {
 .button.is-custom-color {
     background-color: #527dff !important;
     border-color: #527dff !important;
+    color: white !important;
     border: none;
     cursor: pointer;
 }
