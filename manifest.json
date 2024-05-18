@@ -5,7 +5,7 @@
     "start_url": ".",
     "display": "standalone",
     "background_color": "whitesmoke",
-    "theme_color": "#3788d8",
+    "theme_color": "#527dff",
     "description": "日本のローバースカウト向けのイベント情報をまとめるカレンダー",
     "icons": [
       {
