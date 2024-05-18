@@ -15,14 +15,14 @@ nav.navbar {
 }
 
 /* button customaization */
-.button.custom-color {
+.button.is-custom-color {
     background-color: #527dff;
     border-color: #527dff;
     border: none;
     cursor: pointer;
 }
 
-.button.custom-color:hover {
+.button.is-custom-color:hover {
     background-color: #6c91ff;
     border-color: #6c91ff;
 }
