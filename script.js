@@ -140,13 +140,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     //// init calendar view switch
     const changeViewButton = document.getElementById('isListView');
-
-    console.log(changeViewButton);
-
     changeViewButton.addEventListener('click', function() {
-
-      console.log(changeViewButton.checked);
-
       if (changeViewButton.checked) {
         calendar.changeView('listMonth');
       } else {

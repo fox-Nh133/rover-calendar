@@ -78,7 +78,9 @@ self.addEventListener('activate', (event) => {
 self.addEventListener('fetch', (event) => {
   const url = new URL(event.request.url);
 
-  if (url.pathname === '/backend/expanded-calendar.json') {
+  if (url.protocol === 'chrome-extension:') {
+    event.respondWith(fetch(event.request));
+  } else if (url.pathname === '/backend/expanded-calendar.json') {
     event.respondWith(networkFirstForCalendar(event.request));
   } else {
     event.respondWith(staleWhileRevalidate(event.request));
