@@ -133,12 +133,27 @@
     "end": "2024-09-08T15:00:00.000Z",
     "uid": "2epqdcuskj1ii6aoto002f7vjq@google.com",
     "created": "2024-05-06T08:43:15.000Z",
-    "description": "参加費: 30,000円\n参加対象: ローバースカウト及び同年代指導者\n申込〆切:\n　　サポートチーム: 4月30日(火)\n　　参加者: 5月15日(水)\nURL: 大会サイト",
-    "lastmodified": "2024-05-17T20:51:00.000Z",
+    "description": "参加費: 30,000円<br>参加対象: ローバースカウト及び同年代指導者<br>申込〆切:<br>　　サポートチーム: 4月30日(火)<br>　　参加者: 5月15日(水)<br>URL: <a href=\"https://www.scout.or.jp/member/rovermoot2024\">大会サイト</a>",
+    "lastmodified": "2024-05-17T23:45:13.000Z",
     "location": "ボーイスカウト日本連盟那須野営場, 日本、〒329-2756 栃木県那須塩原市西三島７丁目３３４",
     "sequence": "0",
     "status": "CONFIRMED",
     "summary": "日本ローバームート2024",
+    "transparency": "TRANSPARENT"
+  },
+  {
+    "type": "VEVENT",
+    "params": [],
+    "start": "2024-09-20T15:00:00.000Z",
+    "end": "2024-09-23T15:00:00.000Z",
+    "uid": "1l68valqlpe0caekr03csq7vhu@google.com",
+    "created": "2024-05-14T07:58:04.000Z",
+    "description": "参加対象: ローバースカウおよび同年代の指導者　50人<br>参加費: 参加者20,000円<br>　　　  運営委員18,000円<br>申込〆切: 運営委員 5月7日(火) 日本連盟事務局まで<br>URL: <a href=\"https://www.scout.or.jp/member/rs-workshop2024\">特設ページ</a>",
+    "lastmodified": "2024-05-17T23:45:24.000Z",
+    "location": "ＭＯＡ大仁研修センター（静岡県伊豆の国市）",
+    "sequence": "0",
+    "status": "CONFIRMED",
+    "summary": "2024年度ローバースカウト集合訓練",
     "transparency": "TRANSPARENT"
   }
 ]
