@@ -42,6 +42,18 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     registerServiceWorker();
+    
+    // Ask for notification permission
+    async function askPermission() {
+      try {
+        const permissionResult = await Notification.requestPermission();
+        if (permissionResult !== 'granted') {
+          throw new Error('We weren\'t granted permission.');
+        }
+      } catch (error) {
+        console.error('Notification permission request failed', error);
+      }
+    }
 
     // init add event buttons
     const addEventButton = document.getElementById('addEventButton');
