@@ -89,21 +89,22 @@ nav.navbar {
     display: none;
 }
 
-#isListView {
+#isListView input{
     display: none;
 }
 
-#isListView label {
+#isListView div{
     display: none;
 }
 
 /* show list view option for narrow viewport */
 @media (max-width: 600px) {
-    #isListView {
-        display: block;
+    #isListView input{
+        display: flex;
     }
-    #isListView label {
-        display: block;
+    
+    #isListView div{
+        display: flex;
     }
 }
 /* hide today button to avoid layout break for narrow viewport( < 400px) */
