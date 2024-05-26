@@ -93,9 +93,16 @@ nav.navbar {
     display: none;
 }
 
+#isListView label {
+    display: none;
+}
+
 /* show list view option for narrow viewport */
 @media (max-width: 600px) {
     #isListView {
+        display: block;
+    }
+    #isListView label {
         display: block;
     }
 }
