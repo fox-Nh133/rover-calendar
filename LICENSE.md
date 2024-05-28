@@ -22,12 +22,11 @@ SOFTWARE.
 
 ---
 
-Third-Party Licenses
+## Third-Party Licenses
 
 This repository includes third-party software components which are licensed under their own respective licenses. The following third-party software is included:
 
-FullCalendar
-
+### FullCalendar
 FullCalendar is licensed under the MIT License. The FullCalendar library is located in the `lib` directory.
 
 MIT License
