@@ -24,11 +24,11 @@ graph LR
         end
     end
     subgraph external
-        iCalResource(Google Calendar ical URL)
+        iCalResource(Google Calendar iCal resource)
     end
 
     gh-page <--> frontend
-    iCalResource <--update event data every 3 hour--> fetch
+    iCalResource <---> fetch
     fetch --> deploy
     deploy --deploy--> gh-page
 ```
