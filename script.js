@@ -55,6 +55,58 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     }
 
+    // Subscribe to Push
+    async function subscribeUserToPush(registration) {
+      try {
+        const subscription = await registration.pushManager.getSubscription();
+        if (subscription) {
+          console.log('User is already subscribed:', subscription);
+          return subscription;
+        }
+
+        const response = await fetch('/vapidPublicKey');
+        const vapidPublicKey = await response.text();
+        const convertedVapidKey = urlB64ToUint8Array(vapidPublicKey);
+
+        const newSubscription = await registration.pushManager.subscribe({
+          userVisibleOnly: true,
+          applicationServerKey: convertedVapidKey
+        });
+
+        console.log('New subscription:', newSubscription);
+        // サーバーに新しいサブスクリプションを送信
+        await fetch('/subscribe', {
+          method: 'POST',
+          body: JSON.stringify(newSubscription),
+          headers: {
+            'Content-Type': 'application/json'
+          }
+        });
+
+        return newSubscription;
+      } catch (error) {
+        console.error('Failed to subscribe the user:', error);
+      }
+    }
+
+    function urlB64ToUint8Array(base64String) {
+      const padding = '='.repeat((4 - base64String.length % 4) % 4);
+      const base64 = (base64String + padding).replace(/-/g, '+').replace(/_/g, '/');
+      const rawData = window.atob(base64);
+      const outputArray = new Uint8Array(rawData.length);
+
+      for (let i = 0; i < rawData.length; ++i) {
+        outputArray[i] = rawData.charCodeAt(i);
+      }
+      return outputArray;
+    }
+
+    (async () => {
+      const registration = await registerServiceWorker();
+      await askPermission();
+      await subscribeUserToPush(registration);
+    })();
+
     // init add event buttons
     const addEventButton = document.getElementById('addEventButton');
 

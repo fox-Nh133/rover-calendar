@@ -86,3 +86,16 @@ self.addEventListener('fetch', (event) => {
     event.respondWith(staleWhileRevalidate(event.request));
   }
 });
+
+// push event listener
+self.addEventListener('push', function(event) {
+  const options = {
+    body: event.data ? event.data.text() : 'Push message no payload',
+    icon: 'assets/icon/icon-72x72.png',
+    badge: 'assets/icon/icon-96x96.png'
+  };
+
+  event.waitUntil(
+    self.registration.showNotification('Push Notification', options)
+  );
+});
