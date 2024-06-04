@@ -35,13 +35,13 @@ document.addEventListener('DOMContentLoaded', () => {
           } else if (registration.active) {
             console.log("Service worker active");
           }
+          // return the registration object
+          return registration;
         } catch (error) {
           console.error(`Registration failed with ${error}`);
         }
       }
     }
-
-    registerServiceWorker();
     
     // Ask for notification permission
     async function askPermission() {
