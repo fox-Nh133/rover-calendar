@@ -74,14 +74,19 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         console.log('New subscription:', newSubscription);
-        // サーバーに新しいサブスクリプションを送信
-        await fetch('/subscribe', {
+
+        // define endpoint url
+        const endPoint = 'https://europe-west6-rover-calendar-421909.cloudfunctions.net/pushSubscription'
+
+        //　save subscription info in github repository
+        await fetch(endPoint, {
           method: 'POST',
           body: JSON.stringify(newSubscription),
           headers: {
             'Content-Type': 'application/json'
           }
-        });
+        });        
+        
 
         return newSubscription;
       } catch (error) {
