@@ -7,30 +7,6 @@
 ## スクリーンショット 🖼️
 ![Screenshot 2024-05-06 at 18 29 54](https://github.com/fox-Nh133/rover-calendar/assets/106661910/42b9a563-0f04-4452-bf2d-8e7de7652cb0)
 ## 実装イメージ
-```mermaid
-graph RL
-    subgraph frontend
-        subgraph freamworks
-           css(Bulma CSS)
-           js1(FullCalendar JS)
-           js2(iCAL JS)
-        end
-    end
-    subgraph backend
-        gh-page(GitHub Pages)
-        subgraph GitHub Actions
-            fetch(fetch-calendar.yml)
-            deploy(pages-build-deployment) 
-        end
-    end
-    subgraph external
-        iCalResource(Google Calendar iCal resource)
-    end
-
-    gh-page <--> frontend
-    iCalResource <---> fetch
-    fetch --> deploy
-    deploy --deploy--> gh-page
-```
+![rover-calendar-architecture_2](https://github.com/fox-Nh133/rover-calendar/assets/106661910/39fe5b53-0793-4343-bd06-72e170ad250d)
 ## ライセンス
 [MIT License](https://github.com/fox-Nh133/rover-calendar/blob/main/LICENSE.md)
