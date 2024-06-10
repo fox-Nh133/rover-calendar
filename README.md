@@ -7,6 +7,6 @@
 ## スクリーンショット 🖼️
 ![Screenshot 2024-05-06 at 18 29 54](https://github.com/fox-Nh133/rover-calendar/assets/106661910/42b9a563-0f04-4452-bf2d-8e7de7652cb0)
 ## 実装イメージ
-![rover-calendar-architecture_2](https://github.com/fox-Nh133/rover-calendar/assets/106661910/39fe5b53-0793-4343-bd06-72e170ad250d)
+![rover-calendar-architecture_3](https://github.com/fox-Nh133/rover-calendar/assets/106661910/1fcb849e-c5f4-4889-8dd3-2d9a97739e59)
 ## ライセンス
 [MIT License](https://github.com/fox-Nh133/rover-calendar/blob/main/LICENSE.md)
