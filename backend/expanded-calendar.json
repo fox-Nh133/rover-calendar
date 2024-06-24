@@ -422,21 +422,6 @@
   {
     "type": "VEVENT",
     "params": [],
-    "start": "2024-09-02T15:00:00.000Z",
-    "end": "2024-09-08T15:00:00.000Z",
-    "uid": "2epqdcuskj1ii6aoto002f7vjq@google.com",
-    "created": "2024-05-06T08:43:15.000Z",
-    "description": "参加費: 30,000円<br>参加対象: ローバースカウト及び同年代指導者<br>申込〆切:<br>　　サポートチーム: 4月30日(火)<br>　　参加者: 5月15日(水)<br>URL: <a href=\"https://www.scout.or.jp/member/rovermoot2024\">大会サイト</a>",
-    "lastmodified": "2024-05-17T23:45:13.000Z",
-    "location": "ボーイスカウト日本連盟那須野営場, 日本、〒329-2756 栃木県那須塩原市西三島７丁目３３４",
-    "sequence": "0",
-    "status": "CONFIRMED",
-    "summary": "日本ローバームート2024",
-    "transparency": "TRANSPARENT"
-  },
-  {
-    "type": "VEVENT",
-    "params": [],
     "start": "2024-09-20T15:00:00.000Z",
     "end": "2024-09-23T15:00:00.000Z",
     "uid": "1l68valqlpe0caekr03csq7vhu@google.com",
@@ -463,5 +448,30 @@
     "status": "CONFIRMED",
     "summary": "A-CON 2024",
     "transparency": "TRANSPARENT"
+  },
+  {
+    "type": "VEVENT",
+    "params": [],
+    "start": "2024-09-02T15:00:00.000Z",
+    "end": "2024-09-08T15:00:00.000Z",
+    "uid": "2epqdcuskj1ii6aoto002f7vjq@google.com",
+    "created": "2024-05-06T08:43:15.000Z",
+    "description": "参加費: 30,000円<br>参加対象: ローバースカウト及び同年代指導者<br>申込〆切:<br>　　サポートチーム: 4月30日(火)<br>　　参加者: 5月15日(水)<br>URL: <a href=\"https://www.scout.or.jp/member/rovermoot2024\">大会サイト</a>",
+    "lastmodified": "2024-06-24T00:05:59.000Z",
+    "location": "ボーイスカウト日本連盟那須野営場, 日本、〒329-2756 栃木県那須塩原市西三島７丁目３３４",
+    "sequence": "0",
+    "status": "CONFIRMED",
+    "summary": "日本ローバームート2024",
+    "transparency": "TRANSPARENT",
+    "APPLE-STRUCTURED-LOCATION": {
+      "params": {
+        "VALUE": "URI",
+        "X-APPLE-MAPKIT-HANDLE": "CAESsQII2TIaEgnc4WU8AHNCQBGD4Eyn0H5hQCKJAQoFSmFwYW4SAkpQGgdUb2NoaWdpMgxOYXN1c2hpb2JhcmE6CDMyOS0yNzU2QgxOaXNoaW1pc2hpbWFSFU5pc2hpbWlzaGltYSA3LUNoxY1tZVoDMzM0YhozMzQsIE5pc2hpbWlzaGltYSA3LUNoxY1tZXIGSG9uc2h1igEMTmlzaGltaXNoaW1hKhozMzQsIE5pc2hpbWlzaGltYSA3LUNoxY1tZTIaMzM0LCBOaXNoaW1pc2hpbWEgNy1DaMWNbWUyFU5hc3VzaGlvYmFyYSwgVG9jaGlnaTIOSmFwYW4gMzI5LTI3NTY4OUAAUAFaJwolEhIJ3OFlPABzQkARg+BMp9B+YUAY2TIg1IeEhYTO2+m6AZADAQ==",
+        "X-APPLE-RADIUS": 70.58731256485652,
+        "X-APPLE-REFERENCEFRAME": 1,
+        "X-TITLE": "\"ボーイスカウト日本連盟那須野営場, 日本、〒329-2756 栃木県那須塩原市西三島７丁目３３４\""
+      },
+      "val": "geo:36.898445,139.962970"
+    }
   }
 ]
