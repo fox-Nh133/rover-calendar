@@ -422,21 +422,6 @@
   {
     "type": "VEVENT",
     "params": [],
-    "start": "2024-09-20T15:00:00.000Z",
-    "end": "2024-09-23T15:00:00.000Z",
-    "uid": "1l68valqlpe0caekr03csq7vhu@google.com",
-    "created": "2024-05-14T07:58:04.000Z",
-    "description": "参加対象: ローバースカウおよび同年代の指導者　50人<br>参加費: 参加者20,000円<br>　　　  運営委員18,000円<br>申込〆切: 運営委員 5月7日(火) 日本連盟事務局まで<br>URL: <a href=\"https://www.scout.or.jp/member/rs-workshop2024\">特設ページ</a>",
-    "lastmodified": "2024-05-17T23:45:24.000Z",
-    "location": "ＭＯＡ大仁研修センター（静岡県伊豆の国市）",
-    "sequence": "0",
-    "status": "CONFIRMED",
-    "summary": "2024年度ローバースカウト集合訓練",
-    "transparency": "TRANSPARENT"
-  },
-  {
-    "type": "VEVENT",
-    "params": [],
     "start": "2024-09-13T15:00:00.000Z",
     "end": "2024-09-16T15:00:00.000Z",
     "uid": "38o5tgrqiuvvuismo1aa6vo502@google.com",
@@ -517,6 +502,21 @@
     "sequence": "0",
     "status": "CONFIRMED",
     "summary": "第3回RCJ近畿ブロックイベント (Yamboree)",
+    "transparency": "TRANSPARENT"
+  },
+  {
+    "type": "VEVENT",
+    "params": [],
+    "start": "2025-03-21T15:00:00.000Z",
+    "end": "2025-03-24T15:00:00.000Z",
+    "uid": "1l68valqlpe0caekr03csq7vhu@google.com",
+    "created": "2024-05-14T07:58:04.000Z",
+    "description": "参加対象: ローバースカウおよび同年代の指導者　50人<br>参加費: 参加者20,000円<br>　　　  運営委員18,000円<br>申込〆切: 運営委員 5月7日(火) 日本連盟事務局まで<br>URL: <a href=\"https://www.scout.or.jp/member/rs-workshop2024\">特設ページ</a>",
+    "lastmodified": "2024-09-17T13:18:37.000Z",
+    "location": "ＭＯＡ大仁研修センター（静岡県伊豆の国市）",
+    "sequence": "1",
+    "status": "CONFIRMED",
+    "summary": "2024年度ローバースカウト集合訓練",
     "transparency": "TRANSPARENT"
   }
 ]
