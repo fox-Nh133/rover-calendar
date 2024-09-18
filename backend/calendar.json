@@ -210,20 +210,5 @@
     "status": "CONFIRMED",
     "summary": "第3回RCJ近畿ブロックイベント (Yamboree)",
     "transparency": "TRANSPARENT"
-  },
-  {
-    "type": "VEVENT",
-    "params": [],
-    "start": "2025-02-21T15:00:00.000Z",
-    "end": "2025-02-24T15:00:00.000Z",
-    "uid": "1l68valqlpe0caekr03csq7vhu@google.com",
-    "created": "2024-05-14T07:58:04.000Z",
-    "description": "参加対象: ローバースカウトおよび同年代の指導者　50人<br>参加費: 参加者20,000円<br>　　　  運営委員18,000円<br>申込〆切: <br>　　タスクチーム: 5月7日（火）日本連盟事務局ま<br>　　参加者: 未定<br>　　　　 <br>URL: <a href=\"https://www.scout.or.jp/member/rs-workshop2024\" target=\"_blank\">特設ページ</a>",
-    "lastmodified": "2024-09-18T14:02:40.000Z",
-    "location": "未定",
-    "sequence": "2",
-    "status": "CONFIRMED",
-    "summary": "Rover Scout Workshop 2024",
-    "transparency": "TRANSPARENT"
   }
 ]
