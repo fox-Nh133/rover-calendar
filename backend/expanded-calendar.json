@@ -492,14 +492,14 @@
   {
     "type": "VEVENT",
     "params": [],
-    "start": "2025-02-20T15:00:00.000Z",
-    "end": "2025-02-24T15:00:00.000Z",
+    "start": "2025-03-12T15:00:00.000Z",
+    "end": "2025-03-16T15:00:00.000Z",
     "uid": "62367cl36clnva8l7lln2vo28e@google.com",
     "created": "2024-09-01T13:51:06.000Z",
     "description": "参加費: 未定<br>参加対象: 近畿の連盟に所属がある又は近畿圏内に在住のローバースカウト及び同年代指導者<br>申込〆切:<br>　　タスクチーム: 9月9日(月)<br>　　参加者: 未定<br>URL: <a href=\"https://www.instagram.com/rcjkinki6/\" target=\"_blank\"><u>Instagram</u></a>",
-    "lastmodified": "2024-09-01T13:51:06.000Z",
+    "lastmodified": "2024-09-25T12:34:14.000Z",
     "location": "未定",
-    "sequence": "0",
+    "sequence": "1",
     "status": "CONFIRMED",
     "summary": "第3回RCJ近畿ブロックイベント (Yamboree)",
     "transparency": "TRANSPARENT"
